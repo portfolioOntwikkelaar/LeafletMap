@@ -1,18 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Leaflet</title>
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.3/leaflet.css" />
-    <script src="js/leaflet.js"></script>
-	<script src="coords.json"></script>
-    <script src="js/leaflet.hotline.js"></script>
-    <link rel="stylesheet" href="style.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Leaflet Hotline — verbeterd</title>
+
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+/>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-    <div id="map"></div>
-    <script src="script.js"></script>
+  <header class="app-header">
+    <div class="container">
+      <h1 class="logo">Hotline Map <span class="muted">— verbeterd ontwerp</span></h1>
+      <div class="controls">
+        <button id="fitBoundsBtn" class="btn">Pas kaart aan</button>
+        <button id="downloadBtn" class="btn outline">Download coords</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="app-main">
+    <aside class="sidebar">
+      <section class="panel">
+        <h2>Route info</h2>
+        <p id="routeInfo">Laad gegevens…</p>
+      </section>
+
+      <section class="panel">
+        <h3>Legenda</h3>
+        <div id="legend">
+          <canvas id="legendCanvas" width="20" height="200"></canvas>
+          <div class="legend-labels">
+            <span id="legendMax">max</span>
+            <span id="legendMid">mid</span>
+            <span id="legendMin">min</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel small">
+        <h4>Kaart instellingen</h4>
+        <label><input type="checkbox" id="toggleTiles" checked> Toon OSM tiles</label><br>
+        <label><input type="checkbox" id="toggleHotline" checked> Toon route</label>
+      </section>
+    </aside>
+
+    <section id="map" class="map"></section>
+  </main>
+
+  <footer class="app-footer">
+    <div class="container">
+      <small>Leaflet — demo</small>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="leaflet.hotline.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
