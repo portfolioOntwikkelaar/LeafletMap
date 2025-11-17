@@ -1,7 +1,7 @@
 // script.js — moderne, nette implementatie
 
 // helper: fetch JSON coordinates
-async function loadCoords(url = '/coords.json') {
+async function loadCoords(url = 'coords.json') {
   const res = await fetch(url);
   if (!res.ok) throw new Error('Kon coords.json niet laden: ' + res.status);
   const data = await res.json();
@@ -52,7 +52,7 @@ function drawLegend(palette, min, max){
 
 async function init() {
   try {
-    const latlngs = await loadCoords('/coords.json');
+    const latlngs = await loadCoords('coords.json');
 
     // Base tile
     const osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -123,7 +123,7 @@ async function init() {
     });
 
     document.getElementById('downloadBtn').addEventListener('click', function(){
-      fetch('/coords.json')
+      fetch('coords.json')
         .then(r => r.blob())
         .then(blob => {
           const url = URL.createObjectURL(blob);
