@@ -18,9 +18,8 @@ body{
   min-height:100vh;
 }
 .leaflet-bottom.leaflet-right {
-  bottom: -1cm; 
+  bottom: -1cm; /* duwt de attributie 1 cm onder het kaartvenster */
 }
-
 /* header */
 .app-header{
   background: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
