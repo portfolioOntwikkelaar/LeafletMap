@@ -17,6 +17,9 @@ body{
   -moz-osx-font-smoothing:grayscale;
   min-height:100vh;
 }
+.leaflet-bottom.leaflet-right {
+  bottom: -1cm; 
+}
 
 /* header */
 .app-header{
